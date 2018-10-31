@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
 import Message from "./Message"
-import ClickedMessage from "./ClickedMessage"
 
-class MessageList extends Component {
-    render () {
-        
-
-        
+let MessageList = (props) => {
         return (
-        <div>
-        {this.props.subjects}
+            props.messages.map(message => {
+                return <Message />
+            })
 
 
-
-
-        </div>
         )
-    }
 }
 
 export default MessageList;

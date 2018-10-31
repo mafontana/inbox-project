@@ -13,9 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [],
-      subject: [], 
-      isChecked: false
+      messages: [1, 2, 3],
+      subject: "", 
     };
   }
 
@@ -25,7 +24,9 @@ class App extends Component {
     this.setState({
       messages: json
     });
+   
     console.log("messages", this.state.messages);
+    
   }
 
 
@@ -39,16 +40,12 @@ handleMessageClick () {
   render() {
   
 
-  // const isChecked = this.state.isChecked
-
-
-  //   const subjects = this.state.messages.map(msg => (
-  //     <Message subjects={msg.subject} isChecked={this.isChecked} handleMessageClick={this.props.handleMessageClick}/>
-  //   ));
+ 
 
     return (
       <div>
         <Toolbar />
+        <MessageList messages={this.state.messages}/>
        
       </div>
     );
@@ -57,4 +54,3 @@ handleMessageClick () {
 
 export default App;
 
- // <MessageList subjects={subjects} isChecked={isChecked} handleMessageClick={this.handleMessageClick}/>
