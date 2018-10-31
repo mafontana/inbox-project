@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Message from "./Message"
+import ClickedMessage from "./ClickedMessage"
 
 class MessageList extends Component {
     render () {
@@ -8,7 +9,11 @@ class MessageList extends Component {
         
         return (
         <div>
-        <Message subjects={this.props.subjects}/>
+        {this.props.subjects}
+
+
+
+
         </div>
         )
     }
