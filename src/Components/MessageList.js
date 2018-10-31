@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import Message from "./Message"
 
 let MessageList = (props) => {
-        return (
+    console.log("props", props)    
+    return (
             props.messages.map(message => {
-                return <Message />
+                return <Message email={message}/>
             })
 
 

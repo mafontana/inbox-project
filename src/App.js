@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [1, 2, 3],
+      messages: [],
       subject: "", 
     };
   }
@@ -26,26 +26,19 @@ class App extends Component {
     });
    
     console.log("messages", this.state.messages);
-    
   }
 
 
-
-handleMessageClick () {
-    this.setState({
-      isChecked: !this.state.isChecked
-    })
-  }
 
   render() {
-  
 
- 
+// const subjects = this.state.messages.map(sub => <MessageList messages={this.state.messages} subjects={sub.subject}/>)
 
     return (
+     
       <div>
         <Toolbar />
-        <MessageList messages={this.state.messages}/>
+        <MessageList messages={this.state.messages} />
        
       </div>
     );
