@@ -28,6 +28,20 @@ class App extends Component {
     console.log("messages", this.state.messages);
   }
 
+messageRead = (id) => {
+  console.log("message read!", id);
+  const updatedMessages = this.state.messages.map(message => {
+    if (message.id === id) {
+      message.read = !message.read;
+    }
+    return message;
+  })
+
+  this.setState({
+    messages: updatedMessages
+  })
+}
+
 
 
   render() {
@@ -38,7 +52,7 @@ class App extends Component {
      
       <div>
         <Toolbar />
-        <MessageList messages={this.state.messages} />
+        <MessageList messages={this.state.messages} messageRead={this.messageRead} />
        
       </div>
     );
