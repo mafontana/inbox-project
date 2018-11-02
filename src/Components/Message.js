@@ -4,7 +4,7 @@ import "../App.css"
 let Message = (props) => {
         console.log(props)
     return (
-            <div class={props.email.read ? "row message read" : "row message unread"} onClick={() => props.messageRead(props.email.id)}>
+            <div class={props.email.read ? "row message read" : "row message unread"} >
             <div class="col-xs-1">
               <div class="row">
                 <div class="col-xs-2">
@@ -15,7 +15,7 @@ let Message = (props) => {
                 </div>
               </div>
             </div>
-            <div class="col-xs-11">
+            <div class="col-xs-11" onClick={() => props.messageRead(props.email.id)}>
               <a href="#">
                 {props.email.subject}
               </a>
