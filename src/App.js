@@ -30,11 +30,14 @@ class App extends Component {
 
 markAsReadButtonClicked = () => {
   console.log("markAsReadButtonClicked was clicked!")
-  // const markAsRead = 
+  const selectedMessages = this.state.messages.filter(message => 
+    message.selected === true)
+    console.log("selected messages", selectedMessages)
+    selectedMessages.forEach(message => this.messageRead(message.id))
+  }
+  
 
-}
-
-messageSelected = (id) => {
+messageSelected = async (id) => {
   console.log("message selected")
  
     const selectedMessage = this.state.messages.map(message => {
