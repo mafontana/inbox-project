@@ -8,7 +8,7 @@ let Message = (props) => {
             <div class="col-xs-1">
               <div class="row">
                 <div class="col-xs-2">
-                  <input type="checkbox"  checked={props.email.selected && "checked"}/>
+                  <input type="checkbox"  onClick={() => props.messageSelected(props.email.id)} checked={(typeof props.email.selected !== "undefined") && props.email.selected === true ? "checked" : ""}/>
                 </div>
                 <div class="col-xs-2">
                   <i class="star fa fa-star-o"></i>
